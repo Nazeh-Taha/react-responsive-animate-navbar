@@ -11,18 +11,21 @@
   justify-content: space-evenly;
   height: 20vh;
 }
+
 .navSocial a {
   text-decoration: none;
   color: white;
   font-size: 21px;
 }
+
 .navSocial {
   width: 15vw;
 }
+
 .navSocial svg {
   display: block;
-  margin: 6.5px auto;
 }
+
 .navSocial ul {
   margin: 0;
   display: flex;
@@ -30,15 +33,19 @@
   list-style: none;
   float: right;
 }
+
 .navLogo {
   width: 50vw;
 }
+
 .LogoImg {
   height: 200px;
 }
+
 .navLinks {
   width: 50vw;
 }
+
 .navLinks ul {
   margin: 0;
   display: flex;
@@ -47,18 +54,21 @@
   justify-content: space-evenly;
   list-style: none;
 }
+
 .navLinks li {
   display: block;
   width: 25%;
   margin: 0 5px;
   text-align: center;
 }
+
 .navLinks li a:hover {
   border: 2px solid white;
   border-radius: 25px;
   transition: 0.2s;
   -webkit-transition: 0.2s;
 }
+
 .navLinks a {
   text-decoration: none;
   display: block;
@@ -67,13 +77,19 @@
   letter-spacing: 4px;
   font-weight: 400;
   font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 .navLinks a:hover {
   text-decoration: none;
 }
+
 .navSocial {
   width: 15vw;
 }
+
 .navSocial ul {
   margin: 0;
   display: flex;
@@ -81,6 +97,7 @@
   list-style: none;
   float: right;
 }
+
 .navSocial li {
   height: 38px;
   width: 38px;
@@ -88,7 +105,11 @@
   border-radius: 50%;
   margin-left: 10px;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 .tooltiptext {
   opacity: 0;
   width: 120px;
@@ -103,6 +124,7 @@
   right: -125%;
   margin-left: -60px;
 }
+
 .tooltiptext:after {
   content: "";
   position: absolute;
@@ -113,14 +135,17 @@
   border-style: solid;
   border-color: transparent transparent #303030 transparent;
 }
+
 .navSocial li:hover {
   background-color: white;
   transition: 0.5s;
   -webkit-transition: 0.5s;
 }
+
 .navSocial li:hover a {
   color: #191919;
 }
+
 .navSocial li:hover .tooltiptext {
   opacity: 0.8;
   transition: opacity 1s;
