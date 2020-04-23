@@ -1,11 +1,10 @@
 import React from "react";
-
 import { ReactNavbar } from "react-responsive-animate-navbar";
-import { Link } from "react-router-dom";
 
 const App = () => {
   return (
     <ReactNavbar
+      color="#191919"
       menu={[
         { name: "HOME", to: "/" },
         { name: "ARTICLES", to: "/articles" },

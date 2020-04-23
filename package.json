@@ -1,6 +1,6 @@
 {
   "name": "react-responsive-animate-navbar",
-  "version": "1.0.6",
+  "version": "1.0.8",
   "description": "react-responsive-animate-navbar",
   "author": "Nazeh-Taha",
   "license": "MIT",
@@ -22,10 +22,8 @@
     "@fortawesome/free-brands-svg-icons": "^5.13.0",
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
     "@fortawesome/react-fontawesome": "^0.1.9",
-    "animejs": "^2.2.0",
-    "classnames": "^2.2.5",
+    "gsap": "^3.2.6",
     "node-sass": "^4.13.1",
-    "raf": "^3.4.0",
     "react-gsap": "^1.2.0",
     "react-router-dom": "^5.1.2",
     "react-scrollmagic": "^2.2.0"

@@ -1,0 +1,141 @@
+.MoNavContainer {
+  zoom: 75%;
+}
+
+.mobileNav {
+  overflow: hidden;
+  height: 100px;
+  width: 100%;
+  display: flex;
+}
+.navBars {
+  width: 30%;
+  color: white;
+  font-size: 40px;
+}
+.navBars svg {
+  margin: 30px;
+  margin-left: 45px;
+  display: block;
+  cursor: pointer;
+}
+.navBars svg:hover {
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  color: #686767;
+}
+.MoNavLogo {
+  width: 40%;
+}
+.MoNavLogo img {
+  height: 100px;
+  display: block;
+  margin: 0 auto;
+}
+.MoNavSocial {
+  width: 30%;
+}
+.MoNavSocial ul {
+  margin: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  list-style: none;
+  float: right;
+  margin: 30px;
+}
+.MoNavSocial li {
+  height: 38px;
+  width: 38px;
+  border: 2px solid white;
+  border-radius: 50%;
+  margin-left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.MoNavSocial li:hover {
+  background-color: white;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+}
+.MoNavSocial li:hover a {
+  color: #191919;
+}
+.MoNavSocial a {
+  color: white;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.MoNavLinks {
+  height: 0px;
+  overflow: hidden;
+}
+.MoNavLinks ul {
+  padding: 8px 60px;
+  list-style-type: none;
+  margin-bottom: 3px;
+}
+.MoNavLinks li {
+  padding: 15px;
+  border-bottom: 1px solid #686767;
+}
+.MoNavLinks a {
+  color: white;
+  text-decoration: none;
+}
+.MoNavLinks a:hover {
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  color: #686767;
+}
+
+.mobileNavII .MoNavSocialII ul {
+  margin: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  list-style: none;
+}
+.mobileNavII .MoNavSocialII li {
+  height: 10px;
+  width: 10px;
+  border: 1px solid white;
+  border-radius: 50%;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mobileNavII .MoNavSocialII li:hover {
+  cursor: pointer;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  background-color: white;
+}
+.mobileNavII .MoNavSocialII li:hover a {
+  color: #191919;
+}
+.mobileNavII .MoNavSocialII a {
+  color: white;
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media only screen and (max-width: 600px) {
+  .mobileNav {
+    height: 70px;
+  }
+  .MoNavLogo img {
+    height: 65px;
+  }
+  .navBars {
+    font-size: 30px;
+  }
+  .navBars svg {
+    margin: 20px;
+    margin-left: 25px;
+  }
+}

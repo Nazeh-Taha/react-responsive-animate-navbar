@@ -19,7 +19,16 @@ import ReactNavbar from 'react-responsive-animate-navbar'
 
 class Example extends Component {
   render() {
-    return <ReactNavbar />
+    return <ReactNavbar 
+     color="rgb(25, 25, 25)"
+     logo="https://svgshare.com/i/KHh.svg"
+     menu={[
+        { name: "HOME", to: "/" },
+        { name: "ARTICLES", to: "/articles" },
+        { name: "ABOUT ME", to: "/about" },
+        { name: "CONTACT", to: "/contact" },
+      ]}
+    />
   }
 }
 ```

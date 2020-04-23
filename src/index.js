@@ -7,7 +7,7 @@ import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
-
+import MobileNav from "./MobileNav";
 library.add(fab);
 
 export const ReactNavbar = ({ color, logo, menu }) => {
@@ -18,7 +18,7 @@ export const ReactNavbar = ({ color, logo, menu }) => {
     { name: "CONTACT", to: "/contact" },
   ]);
 
-  const [background, setBackground] = useState("black");
+  const [background, setBackground] = useState("rgb(25, 25, 25)");
   const [logoUrl, setLogoUrl] = useState("https://svgshare.com/i/KHh.svg");
   const [width, setWidth] = useState(window.innerWidth);
   const updateWidthAndHeight = () => {
@@ -36,7 +36,7 @@ export const ReactNavbar = ({ color, logo, menu }) => {
   return (
     <div>
       {width < 1150 ? (
-        <div>mobile</div>
+        <MobileNav width={width} logoUrl={logoUrl} background={background}/>
       ) : (
         <Controller>
           <Scene triggerHook="onLeave" duration={300} pin>
