@@ -1,10 +1,14 @@
 {
   "name": "react-responsive-animate-navbar",
-  "version": "1.0.8",
-  "description": "react-responsive-animate-navbar",
+  "description": "react responsive animate navbar",
+  "version": "1.1.2",
+  "homepage": "http://github.com/Nazeh-Taha/react-responsive-animate-navbar",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Nazeh-Taha/react-responsive-animate-navbar.git"
+  },
   "author": "Nazeh-Taha",
   "license": "MIT",
-  "repository": "Nazeh-Taha/react-responsive-animate-navbar",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
@@ -17,13 +21,23 @@
     "predeploy": "cd example && npm install && npm run build",
     "deploy": "gh-pages -d example/build"
   },
+  "keywords": [
+    "css",
+    "react-component",
+    "react",
+    "mobile",
+    "navbar",
+    "media query",
+    "matchMedia",
+    "responsive",
+    "component"
+  ],
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
     "@fortawesome/free-brands-svg-icons": "^5.13.0",
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
     "@fortawesome/react-fontawesome": "^0.1.9",
     "gsap": "^3.2.6",
-    "node-sass": "^4.13.1",
     "react-gsap": "^1.2.0",
     "react-router-dom": "^5.1.2",
     "react-scrollmagic": "^2.2.0"

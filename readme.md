@@ -1,6 +1,6 @@
-# react-responsive-animate-navbar
+# react-responsive-animate-navbar ([Example](https://covid-19-instant-tracker.herokuapp.com/))
 
-> react-responsive-animate-navbar
+> just a simple, flexible & completely customisable responsive navigation bar component.
 
 [![NPM](https://img.shields.io/npm/v/react-responsive-animate-navbar.svg)](https://www.npmjs.com/package/react-responsive-animate-navbar) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
@@ -13,25 +13,57 @@ npm install --save react-responsive-animate-navbar
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
-
-import ReactNavbar from 'react-responsive-animate-navbar'
+import React from "react";
+import ReactNavbar from "react-responsive-animate-navbar";
 
 class Example extends Component {
   render() {
-    return <ReactNavbar 
-     color="rgb(25, 25, 25)"
-     logo="https://svgshare.com/i/KHh.svg"
-     menu={[
-        { name: "HOME", to: "/" },
-        { name: "ARTICLES", to: "/articles" },
-        { name: "ABOUT ME", to: "/about" },
-        { name: "CONTACT", to: "/contact" },
-      ]}
-    />
+    return (
+      <ReactNavbar
+        color="rgb(25, 25, 25)"
+        logo="https://svgshare.com/i/KHh.svg"
+        menu={[
+          { name: "HOME", to: "/" },
+          { name: "ARTICLES", to: "/articles" },
+          { name: "ABOUT ME", to: "/about" },
+          { name: "CONTACT", to: "/contact" },
+        ]}
+        social={[
+          {
+            name: "Linkedin",
+            url: "https://www.linkedin.com/in/nazeh-taha/",
+            icon: ["fab", "linkedin-in"],
+          },
+          {
+            name: "Facebook",
+            url: "https://www.facebook.com/nazeh200/",
+            icon: ["fab", "facebook-f"],
+          },
+          {
+            name: "Instagram",
+            url: "https://www.instagram.com/nazeh_taha/",
+            icon: ["fab", "linkedin-in"],
+          },
+          {
+            name: "Twitter",
+            url: "http://nazehtaha.herokuapp.com/",
+            icon: ["fab", "twitter"],
+          },
+        ]}
+      />
+    );
   }
 }
 ```
+
+## Props
+
+| Property | Type   | Default                        | Description                  |
+| :------- | :----- | :----------------------------- | :--------------------------- |
+| `color`  | string | "rgb(25, 25, 25)"              | The Background of the navbar |
+| `logo`   | string | https://svgshare.com/i/KHh.svg | the SVG logo url.            |
+| `menu`   | array  | like the example               | the links for route.         |
+| `social` | array  | like the example               | the icons for social links.  |
 
 ## License
 

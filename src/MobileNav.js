@@ -1,18 +1,24 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useState } from "react";
 import { Link, BrowserRouter as Router } from "react-router-dom";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { fab } from "@fortawesome/free-brands-svg-icons";
-import { faGlobe, faBars } from "@fortawesome/free-solid-svg-icons";
+import { fab, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { TweenMax, Power3 } from "gsap";
 import styles from "./MobileNav.css";
 
-library.add(fab, faGlobe, faBars);
+library.add(fab, faBars);
 
-const MobileNav = ({ width, logoUrl, background }) => {
+const MobileNav = ({ width, logoUrl, background, navLinks, socialIcon }) => {
   let nav = useRef(null);
   const [click, setClick] = useState(false);
-
+  const socialLinks = socialIcon.map((icon) => (
+    <li>
+      <a target="_blank" href={icon.url}>
+        <FontAwesomeIcon icon={icon.icon} />
+      </a>
+    </li>
+  ));
   const handelExpand = () => {
     if (click === false) {
       TweenMax.to(nav, 0.8, { height: 300, ease: Power3.easeOut });
@@ -23,11 +29,10 @@ const MobileNav = ({ width, logoUrl, background }) => {
     }
   };
 
-  useEffect(() => {}, []);
 
   return (
-    <div className={styles.MoNavContainer} style={{background:background}}>
-      <div className={styles.mobileNav} style={{background:background}}>
+    <div className={styles.MoNavContainer} style={{ background: background }}>
+      <div className={styles.mobileNav} style={{ background: background }}>
         <div className={styles.navBars}>
           <FontAwesomeIcon icon={faBars} onClick={handelExpand} />
         </div>
@@ -36,100 +41,28 @@ const MobileNav = ({ width, logoUrl, background }) => {
         </div>
 
         <div className={styles.MoNavSocial}>
-          {width > 700 ? (
-            <ul>
-              <li>
-                <a
-                  target="_blank"
-                  href="https://www.linkedin.com/in/nazeh-taha/"
-                >
-                  <FontAwesomeIcon icon={["fab", "linkedin-in"]} />
-                </a>
-              </li>
-              <li>
-                <a target="_blank" href="https://www.facebook.com/nazeh200/">
-                  <FontAwesomeIcon icon={["fab", "facebook-f"]} />
-                </a>
-              </li>
-              <li>
-                <a target="_blank" href="https://www.instagram.com/nazeh_taha/">
-                  <FontAwesomeIcon icon={["fab", "instagram"]} />
-                </a>
-              </li>
-              <li>
-                <a target="_blank" href="http://nazeh-taha.herokuapp.com/">
-                  <FontAwesomeIcon icon={faGlobe} />
-                </a>
-              </li>
-            </ul>
-          ) : null}
+          {width > 700 ? <ul>{socialLinks}</ul> : null}
         </div>
       </div>
       <div
         className={styles.MoNavLinks}
-        ref={el => {
+        ref={(el) => {
           nav = el;
         }}
       >
         <ul>
-          <li>
-          <Router>
-            <Link to="/">HOME</Link>
-         </Router>
-          </li>
-          <li>
-          <Router>
-            <Link to="/articles-list">ARTICLES</Link>
-        </Router>
-          </li>
-          <li>
-          <Router>
-            <Link to="/about">ABOUT ME</Link>
-            </Router>
-          </li>
-          <li>
-          <Router>
-            <Link to="/contact">CONTACT</Link>
-           </Router>
-          </li>
+          {navLinks.map((link, i) => (
+            <li key={i}>
+              <Router>
+                <Link to={link.to}>{link.name}</Link>
+              </Router>
+            </li>
+          ))}
         </ul>
         {width < 700 ? (
           <div className={styles.mobileNavII}>
             <div className={styles.MoNavSocialII}>
-              <ul>
-                <li>
-                  <a
-                    target="_blank"
-                    href="https://www.linkedin.com/in/nazeh-taha/"
-                  >
-                    <FontAwesomeIcon icon={["fab", "linkedin-in"]} />
-                  </a>
-                </li>
-                <li>
-                  <a target="_blank" href="https://www.facebook.com/nazeh200/">
-                    <FontAwesomeIcon
-                      icon={["fab", "facebook-f"]}
-                      className="svg2"
-                    />
-                  </a>
-                </li>
-                <li>
-                  <a
-                    target="_blank"
-                    href="https://www.instagram.com/nazeh_taha/"
-                  >
-                    <FontAwesomeIcon
-                      icon={["fab", "instagram"]}
-                      className="svg"
-                    />
-                  </a>
-                </li>
-                <li>
-                  <a target="_blank" href="http://nazeh-taha.herokuapp.com/">
-                    <FontAwesomeIcon icon={faGlobe} />
-                  </a>
-                </li>
-              </ul>
+              <ul>{socialLinks}</ul>
             </div>
           </div>
         ) : null}

@@ -3,21 +3,41 @@ import { Controller, Scene } from "react-scrollmagic";
 import { Tween, Timeline } from "react-gsap";
 import { Link, NavLink, BrowserRouter as Router } from "react-router-dom";
 import styles from "./styles.css";
-import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import MobileNav from "./MobileNav";
 library.add(fab);
 
-export const ReactNavbar = ({ color, logo, menu }) => {
+export const ReactNavbar = ({ color, logo, menu, social }) => {
   const [navLinks, setNavLinks] = useState([
     { name: "HOME", to: "/" },
     { name: "ARTICLES", to: "/articles" },
     { name: "ABOUT ME", to: "/about" },
     { name: "CONTACT", to: "/contact" },
   ]);
-
+  const [socialIcon, setSocialIcon] = useState([
+    {
+      name: "Linkedin",
+      url: "https://www.linkedin.com/in/nazeh-taha/",
+      icon: ["fab", "linkedin-in"],
+    },
+    {
+      name: "Facebook",
+      url: "https://www.facebook.com/nazeh200/",
+      icon: ["fab", "facebook-f"],
+    },
+    {
+      name: "Instagram",
+      url: "https://www.instagram.com/nazeh_taha/",
+      icon: ["fab", "linkedin-in"],
+    },
+    {
+      name: "Twitter",
+      url: "http://nazehtaha.herokuapp.com/",
+      icon: ["fab", "twitter"],
+    },
+  ]);
   const [background, setBackground] = useState("rgb(25, 25, 25)");
   const [logoUrl, setLogoUrl] = useState("https://svgshare.com/i/KHh.svg");
   const [width, setWidth] = useState(window.innerWidth);
@@ -28,6 +48,7 @@ export const ReactNavbar = ({ color, logo, menu }) => {
     menu ? setNavLinks(menu) : [];
     color ? setBackground(color) : null;
     logo ? setLogoUrl(logo) : null;
+    social ? setSocialIcon(social) : [];
   }, []);
   useEffect(() => {
     window.addEventListener("resize", updateWidthAndHeight);
@@ -36,7 +57,13 @@ export const ReactNavbar = ({ color, logo, menu }) => {
   return (
     <div>
       {width < 1150 ? (
-        <MobileNav width={width} logoUrl={logoUrl} background={background}/>
+        <MobileNav
+          width={width}
+          logoUrl={logoUrl}
+          background={background}
+          navLinks={navLinks}
+          socialIcon={socialIcon}
+        />
       ) : (
         <Controller>
           <Scene triggerHook="onLeave" duration={300} pin>
@@ -87,50 +114,16 @@ export const ReactNavbar = ({ color, logo, menu }) => {
                     </div>
                     <div className={styles.navSocial}>
                       <ul>
-                        <li>
-                          <a
-                            target="_blank"
-                            href="https://www.linkedin.com/in/nazeh-taha/"
-                          >
-                            <FontAwesomeIcon icon={["fab", "linkedin-in"]} />
-                          </a>
-                          <span className={styles.tooltiptext}>
-                            My Linkedin
-                          </span>
-                        </li>
-                        <li>
-                          <a
-                            target="_blank"
-                            href="https://www.facebook.com/nazeh200/"
-                          >
-                            <FontAwesomeIcon icon={["fab", "facebook-f"]} />
-                          </a>
-                          <span className={styles.tooltiptext}>
-                            My Facebook
-                          </span>
-                        </li>
-                        <li>
-                          <a
-                            target="_blank"
-                            href="https://www.instagram.com/nazeh_taha/"
-                          >
-                            <FontAwesomeIcon icon={["fab", "instagram"]} />
-                          </a>
-                          <span className={styles.tooltiptext}>
-                            My Instagram
-                          </span>
-                        </li>
-                        <li>
-                          <a
-                            target="_blank"
-                            href="http://nazeh-taha.herokuapp.com/"
-                          >
-                            <FontAwesomeIcon icon={faGlobe} />
-                          </a>
-                          <span className={styles.tooltiptext}>
-                            Online Portfolio
-                          </span>
-                        </li>
+                        {socialIcon.map((icon, i) => (
+                          <li key={i}>
+                            <a target="_blank" href={icon.url}>
+                              <FontAwesomeIcon icon={icon.icon} />
+                            </a>
+                            <span className={styles.tooltiptext}>
+                              {icon.name}
+                            </span>
+                          </li>
+                        ))}
                       </ul>
                     </div>
                   </div>
