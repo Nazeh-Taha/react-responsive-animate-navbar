@@ -4,6 +4,10 @@
 
 [![NPM](https://img.shields.io/npm/v/react-responsive-animate-navbar.svg)](https://www.npmjs.com/package/react-responsive-animate-navbar) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
+## Desktop Demo:
+![Demo](https://s4.gifyu.com/images/ezgif.com-video-to-gif0e86328adf6d2216.gif)
+## Responsive Demo:
+![Demo](https://s4.gifyu.com/images/27001e3022cd0c4a7.gif)
 ## Install
 
 ```bash
