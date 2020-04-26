@@ -62,12 +62,12 @@ class Example extends Component {
 
 ## Props
 
-| Property | Type   | Default                        | Description                  |
-| :------- | :----- | :----------------------------- | :--------------------------- |
-| `color`  | string | "rgb(25, 25, 25)"              | The Background of the navbar |
-| `logo`   | string | https://svgshare.com/i/KHh.svg | the SVG logo url.            |
-| `menu`   | array  | like the example               | the links for route.         |
-| `social` | array  | like the example               | the icons for social links.  |
+| Property | Type   | Default                          | Description                  |
+| :------- | :----- | :-----------------------------   | :--------------------------- |
+| `color`  | string | "rgb(25, 25, 25)"                | The Background of the navbar |
+| `logo`   | string | "https://svgshare.com/i/KHh.svg" | the SVG logo url.            |
+| `menu`   | array  | like the example                 | the route url.         |
+| `social` | array  | like the example                 | the icons for social links.  |
 
 ## License
 
