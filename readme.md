@@ -46,7 +46,7 @@ class Example extends Component {
           {
             name: "Instagram",
             url: "https://www.instagram.com/nazeh_taha/",
-            icon: ["fab", "linkedin-in"],
+            icon: ["fab", "instagram"],
           },
           {
             name: "Twitter",
