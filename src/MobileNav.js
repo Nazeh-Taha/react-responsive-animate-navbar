@@ -51,13 +51,13 @@ const MobileNav = ({ width, logoUrl, background, navLinks, socialIcon }) => {
         }}
       >
         <ul>
-          {navLinks.map((link, i) => (
-            <li key={i}>
-              <Router>
-                <Link to={link.to}>{link.name}</Link>
-              </Router>
-            </li>
-          ))}
+          <Router>
+            {navLinks.map((link, i) => (
+              <li key={i}>
+                  <Link to={link.to}>{link.name}</Link>
+              </li>
+            ))}
+          </Router>
         </ul>
         {width < 700 ? (
           <div className={styles.mobileNavII}>
