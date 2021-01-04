@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Controller, Scene } from "react-scrollmagic";
 import { Tween, Timeline } from "react-gsap";
-import { Link, NavLink, BrowserRouter as Router } from "react-router-dom";
+import {
+  Link,
+  NavLink,
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 import styles from "./styles.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -54,17 +60,22 @@ export const ReactNavbar = ({ color, logo, menu, social }) => {
     window.addEventListener("resize", updateWidthAndHeight);
     return () => window.removeEventListener("resize", updateWidthAndHeight);
   });
+
+  if (width < 1150) {
+    return (
+      <MobileNav
+        width={width}
+        logoUrl={logoUrl}
+        background={background}
+        navLinks={navLinks}
+        socialIcon={socialIcon}
+      />
+    );
+  }
+
   return (
-    <div>
-      {width < 1150 ? (
-        <MobileNav
-          width={width}
-          logoUrl={logoUrl}
-          background={background}
-          navLinks={navLinks}
-          socialIcon={socialIcon}
-        />
-      ) : (
+    <div style={{ height: "100vh", width: "100%" }}>
+      <Router>
         <Controller>
           <Scene triggerHook="onLeave" duration={300} pin>
             {(progress) => (
@@ -75,42 +86,38 @@ export const ReactNavbar = ({ color, logo, menu, social }) => {
                 >
                   <div className={styles.header}>
                     <div className={styles.navLogo}>
-                      <Router>
-                        <Link to="">
-                          <div className="logo-container">
-                            <Timeline totalProgress={progress} paused>
-                              <Tween
-                                from={{ height: "150px" }}
-                                to={{ height: "70px" }}
-                              >
-                                <img
-                                  className={styles.LogoImg}
-                                  src={logoUrl}
-                                  alt="logo"
-                                />
-                              </Tween>
-                            </Timeline>
-                          </div>
-                        </Link>
-                      </Router>
+                      <Link to="/">
+                        <div className="logo-container">
+                          <Timeline totalProgress={progress} paused>
+                            <Tween
+                              from={{ height: "150px" }}
+                              to={{ height: "70px" }}
+                            >
+                              <img
+                                className={styles.LogoImg}
+                                src={logoUrl}
+                                alt="logo"
+                              />
+                            </Tween>
+                          </Timeline>
+                        </div>
+                      </Link>
                     </div>
 
                     <div className={styles.navLinks}>
-                      <Router>
-                        <ul>
-                          {navLinks.map((link, i) => (
-                            <li key={i}>
-                              <NavLink
-                                exact
-                                to={link.to}
-                                activeClassName={styles.home}
-                              >
-                                {link.name}
-                              </NavLink>
-                            </li>
-                          ))}
-                        </ul>
-                      </Router>
+                      <ul>
+                        {navLinks.map((link, i) => (
+                          <li key={i}>
+                            <NavLink
+                              exact
+                              to={link.to}
+                              activeClassName={styles.home}
+                            >
+                              {link.name}
+                            </NavLink>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                     <div className={styles.navSocial}>
                       <ul>
@@ -132,7 +139,12 @@ export const ReactNavbar = ({ color, logo, menu, social }) => {
             )}
           </Scene>
         </Controller>
-      )}
+        <Switch>
+          {navLinks.map((link, i) => (
+            <Route key={i} exact path={link.to} component={link.component} />
+          ))}
+        </Switch>
+      </Router>
     </div>
   );
 };
