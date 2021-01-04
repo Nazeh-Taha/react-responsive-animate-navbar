@@ -7,7 +7,7 @@
   "dependencies": {
     "react": "file:../node_modules/react",
     "react-dom": "file:../node_modules/react-dom",
-    "react-responsive-animate-navbar": "^1.1.8",
+    "react-responsive-animate-navbar": "file:..",
     "react-router-dom": "file:../node_modules/react-router-dom",
     "react-scripts": "file:../node_modules/react-scripts"
   },
