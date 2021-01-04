@@ -15,7 +15,7 @@ const App = () => {
           { name: "HOME", to: "/", component: Home },
           { name: "ARTICLES", to: "/articles", component: Articles },
           { name: "ABOUT ME", to: "/about", component: About },
-          { name: "CONTACT", to: "/contact", component: Contact },
+          { name: "CONTACT", to: "/contact" },
         ]}
         social={[
           {
