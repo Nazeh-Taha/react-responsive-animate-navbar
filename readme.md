@@ -5,9 +5,13 @@
 [![NPM](https://img.shields.io/npm/v/react-responsive-animate-navbar.svg)](https://www.npmjs.com/package/react-responsive-animate-navbar) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Desktop Demo:
+
 ![Demo](https://s4.gifyu.com/images/ezgif.com-video-to-gif0e86328adf6d2216.gif)
+
 ## Responsive Demo:
+
 ![Demo](https://s4.gifyu.com/images/27001e3022cd0c4a7.gif)
+
 ## Install
 
 ```bash
@@ -19,6 +23,12 @@ npm install --save react-responsive-animate-navbar
 ```jsx
 import React from "react";
 import ReactNavbar from "react-responsive-animate-navbar";
+import {
+  HomeComponent,
+  ArticlesComponent,
+  AboutComponent,
+  ContactComponent,
+} from "./components";
 
 class Example extends Component {
   render() {
@@ -27,10 +37,10 @@ class Example extends Component {
         color="rgb(25, 25, 25)"
         logo="https://svgshare.com/i/KHh.svg"
         menu={[
-          { name: "HOME", to: "/" },
-          { name: "ARTICLES", to: "/articles" },
-          { name: "ABOUT ME", to: "/about" },
-          { name: "CONTACT", to: "/contact" },
+          { name: "HOME", to: "/", component: HomeComponent },
+          { name: "ARTICLES", to: "/articles", component: ArticlesComponent },
+          { name: "ABOUT ME", to: "/about", component: AboutComponent },
+          { name: "CONTACT", to: "/contact", component: ContactComponent },
         ]}
         social={[
           {
@@ -63,10 +73,10 @@ class Example extends Component {
 ## Props
 
 | Property | Type   | Default                          | Description                  |
-| :------- | :----- | :-----------------------------   | :--------------------------- |
+| :------- | :----- | :------------------------------- | :--------------------------- |
 | `color`  | string | "rgb(25, 25, 25)"                | The Background of the navbar |
 | `logo`   | string | "https://svgshare.com/i/KHh.svg" | the SVG logo url.            |
-| `menu`   | array  | like the example                 | the route url.         |
+| `menu`   | array  | like the example                 | the route url.               |
 | `social` | array  | like the example                 | the icons for social links.  |
 
 ## License
