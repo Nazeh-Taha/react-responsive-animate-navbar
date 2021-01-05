@@ -8,7 +8,9 @@ const App = () => {
   const About = () => <h1>About</h1>;
 
   return (
-    <div style={{ backgroundColor: "purple", height: "100vh", width: "100%" }}>
+    <div
+      style={{ backgroundColor: "purple", minHeight: "100vh", width: "100%" }}
+    >
       <ReactNavbar
         color="#191919"
         menu={[
@@ -39,6 +41,7 @@ const App = () => {
             icon: ["fab", "twitter"],
           },
         ]}
+        sticky
       />
     </div>
   );

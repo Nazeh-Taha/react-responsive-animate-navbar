@@ -1,4 +1,7 @@
 .header {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
   zoom: 75%;
   width: 100%;
   z-index: 12;

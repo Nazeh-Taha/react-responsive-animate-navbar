@@ -1,5 +1,7 @@
 .MoNavContainer {
   zoom: 75%;
+  position: -webkit-sticky;
+  top: 0;
 }
 
 .mobileNav {
