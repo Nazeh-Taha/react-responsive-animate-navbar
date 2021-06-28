@@ -15,7 +15,7 @@ import { fab } from "@fortawesome/free-brands-svg-icons";
 import MobileNav from "./MobileNav";
 library.add(fab);
 
-export const ReactNavbar = ({ color, logo, menu, social }) => {
+export const ReactNavbar = ({ color, logo, menu, social, sticky }) => {
   const [navLinks, setNavLinks] = useState([
     { name: "HOME", to: "/" },
     { name: "ARTICLES", to: "/articles" },
@@ -69,12 +69,15 @@ export const ReactNavbar = ({ color, logo, menu, social }) => {
         background={background}
         navLinks={navLinks}
         socialIcon={socialIcon}
+        sticky={sticky}
       />
     );
   }
 
+  const Error = () => <h1>Please pass the component in the menu prop</h1>;
+
   return (
-    <div style={{ height: "100vh", width: "100%" }}>
+    <div style={{ minHeight: "100vh", width: "100%" }}>
       <Router>
         <Controller>
           <Scene triggerHook="onLeave" duration={300} pin>
@@ -141,7 +144,12 @@ export const ReactNavbar = ({ color, logo, menu, social }) => {
         </Controller>
         <Switch>
           {navLinks.map((link, i) => (
-            <Route key={i} exact path={link.to} component={link.component} />
+            <Route
+              key={i}
+              exact
+              path={link.to}
+              component={link.component ? link.component : Error}
+            />
           ))}
         </Switch>
       </Router>

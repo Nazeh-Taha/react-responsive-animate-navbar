@@ -9,7 +9,14 @@ import styles from "./MobileNav.css";
 
 library.add(fab, faBars);
 
-const MobileNav = ({ width, logoUrl, background, navLinks, socialIcon }) => {
+const MobileNav = ({
+  width,
+  logoUrl,
+  background,
+  navLinks,
+  socialIcon,
+  sticky,
+}) => {
   let nav = useRef(null);
   const [click, setClick] = useState(false);
   const socialLinks = socialIcon.map((icon, index) => (
@@ -30,11 +37,14 @@ const MobileNav = ({ width, logoUrl, background, navLinks, socialIcon }) => {
   };
 
   return (
-    <div style={{ height: "100vh", width: "100%" }}>
+    <div style={{ minHeight: "100vh", width: "100%" }}>
       <Router>
         <div
           className={styles.MoNavContainer}
-          style={{ background: background }}
+          style={{
+            background: background,
+            position: sticky ? "sticky" : "unset",
+          }}
         >
           <div className={styles.mobileNav} style={{ background: background }}>
             <div className={styles.navBars}>
