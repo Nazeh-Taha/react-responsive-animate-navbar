@@ -1,5 +1,5 @@
 # react-responsive-animate-navbar ([Example](https://covid-19-instant-tracker.herokuapp.com/))
-
+[Buy Me Acoffee](https://www.buymeacoffee.com/NazehTaha)
 > just a simple, flexible & completely customisable responsive navigation bar component.
 
 [![NPM](https://img.shields.io/npm/v/react-responsive-animate-navbar.svg)](https://www.npmjs.com/package/react-responsive-animate-navbar) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
