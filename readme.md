@@ -80,5 +80,5 @@ class Example extends Component {
 | `social` | array  | like the example                 | the icons for social links.  |
 
 ## License
-
+https://www.buymeacoffee.com/NazehTaha
 MIT © [Nazeh-Taha](https://github.com/Nazeh-Taha)
